@@ -1,50 +1,85 @@
-# Welcome to your Expo app 👋
+# Todo RN
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/codewithamasu/Todo-RN)
 
-## Get started
+Todo RN is a modern and feature-rich to-do list application built with React Native (Expo) and powered by the Convex backend-as-a-service platform. It offers a seamless, real-time experience with a sleek, gradient-based UI and support for both light and dark modes.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **Real-time CRUD:** Create, read, update, and delete your to-do items with changes reflected instantly across devices.
+- **Progress Tracking:** A visual progress bar and detailed stats show your productivity at a glance.
+- **Light & Dark Mode:** Automatically switches based on system settings, or toggle manually in the preferences.
+- **Rich User Interface:** A beautiful, modern design utilizing linear gradients and smooth animations.
+- **Settings & Preferences:** Customize your experience, view task statistics, and manage your data.
+- **Danger Zone:** A secure option to reset the application and permanently delete all tasks.
+- **Cross-Platform:** Built with Expo to run on Android, iOS, and the web.
 
-2. Start the app
+## Tech Stack
 
-   ```bash
-   npx expo start
-   ```
+- **Frontend:** React Native (Expo)
+- **Backend & Database:** Convex
+- **Language:** TypeScript
+- **Routing:** Expo Router (File-based)
+- **Styling:** `StyleSheet`, `expo-linear-gradient`
+- **Icons:** `@expo/vector-icons` (Ionicons)
 
-In the output, you'll find options to open the app in a
+## Project Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+├── app/                  # Screens and routing logic (Expo Router)
+├── assets/               # Stylesheets and images
+├── components/           # Reusable React Native components
+├── convex/               # Backend functions (queries, mutations) and database schema
+├── hooks/                # Custom hooks (e.g., useTheme)
+└── ...                   # Configuration files
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-To learn more about developing your project with Expo, look at the following resources:
+### Prerequisites
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Node.js (LTS version recommended)
+- An account on [Convex](https://convex.dev)
 
-## Join the community
+### Installation & Setup
 
-Join our community of developers creating universal apps.
+1. **Clone the repository:**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+    ```bash
+    git clone https://github.com/codewithamasu/Todo-RN.git
+    cd Todo-RN
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Set up Convex backend:**
+    - Link your local project to your Convex account. This will deploy the backend functions from the `convex/` directory.
+
+      ```bash
+      npx convex dev
+      ```
+
+    - After running the command, Convex will provide you with a deployment URL.
+    - Create a new file named `.env.local` in the root of the project.
+    - Add your Convex deployment URL to the `.env.local` file:
+
+      ```
+      EXPO_PUBLIC_CONVEX_URL="<Your-Convex-URL>"
+      ```
+
+    - Keep the `npx convex dev` process running in a separate terminal to get real-time updates from your backend.
+
+4. **Run the application:**
+    - Start the Expo development server:
+
+      ```bash
+      npx expo start
+      ```
+
+    - In the output, you'll find options to open the app in an Android emulator, iOS simulator, or on the web.
